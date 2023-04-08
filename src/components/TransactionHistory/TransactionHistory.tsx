@@ -1,8 +1,8 @@
-import PropTypes from "prop-types";
+import { ITransactionsProps } from "types/appTypes";
 import { TransactionHistoryItem } from "../TransactionHistoryItem/TransactionHistoryItem";
 import { Table, Head, HeadRow } from "./TransactionHistory.styled";
 
-export function TransactionHistory({items}) {
+export const TransactionHistory:React.FC<ITransactionsProps> = ({items})=> {
     return <Table>
   <Head>
     <tr>
@@ -18,11 +18,3 @@ export function TransactionHistory({items}) {
 </Table>
 }
 
-TransactionHistory.propTypes = {
-    items: PropTypes.arrayOf(PropTypes.shape({
-        id: PropTypes.string.isRequired,
-        type: PropTypes.string.isRequired,
-        amount: PropTypes.string.isRequired,
-        currency: PropTypes.string.isRequired,
-    }))
-}

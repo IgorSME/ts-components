@@ -1,9 +1,9 @@
-import PropTypes from 'prop-types';
-import { Container, StatList } from '../Statistics/Statistics.styled';
+import { IStatisticsProps } from 'types/appTypes';
+import { Container, StatList } from './Statistics.styled';
 import { StatisticsItem } from '../StatisticsItem/StatisticsItem';
 import { findUniqueItems } from '../../helpers/findUniqueItem';
 
-export function Statistics({ title, stats }) {
+export const Statistics:React.FC<IStatisticsProps> = ({ title, stats }) =>{
   return (
     <Container>
       {title && <h2 className="title">{title}</h2>}
@@ -22,13 +22,4 @@ export function Statistics({ title, stats }) {
   );
 }
 
-Statistics.propTypes = {
-  title: PropTypes.string,
-  stats: PropTypes.arrayOf(
-    PropTypes.shape({
-      id: PropTypes.string.isRequired,
-      label: PropTypes.string.isRequired,
-      percentage: PropTypes.number.isRequired,
-    })
-  ),
-};
+

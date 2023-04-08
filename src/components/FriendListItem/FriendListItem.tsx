@@ -1,7 +1,9 @@
-import PropTypes from "prop-types";
+import { IFriend } from "types/appTypes";
 import { Item, Status, Avatar, Name } from "./FriendListItem.styled";
 
-export function FriendListItem({avatar, name,isOnline}) {
+
+export const FriendListItem: React.FC<Pick<IFriend, "avatar" | "name" | "isOnline">> = ({ avatar, name, isOnline }) => {
+    
     return <Item>
         <Status isonline = {isOnline.toString()}></Status>
         <Avatar src={ avatar} alt="User avatar" width="48" />
@@ -9,9 +11,4 @@ export function FriendListItem({avatar, name,isOnline}) {
 </Item>
 }
 
-FriendListItem.propTypes = {
-    avatar: PropTypes.string.isRequired,
-    name: PropTypes.string.isRequired,
-    isOnline: PropTypes.bool.isRequired,
-}
 

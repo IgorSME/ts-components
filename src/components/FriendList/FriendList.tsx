@@ -1,8 +1,8 @@
-import PropTypes from "prop-types";
+import { IFriendsProps } from "types/appTypes";
 import { FriendListItem } from "../FriendListItem/FriendListItem";
 
 
-export function FriendList({friends}) {
+export const FriendList:React.FC<IFriendsProps> = ({friends}) =>{
     return <ul className="friend-list">
         {friends.map(({id, avatar, name, isOnline}) => 
             <FriendListItem
@@ -12,12 +12,4 @@ export function FriendList({friends}) {
                 isOnline={isOnline}
             />)}
 </ul>
-}
-FriendList.propTypes = {
-    friends: PropTypes.arrayOf(PropTypes.shape({
-        id: PropTypes.number.isRequired,
-        avatar: PropTypes.string.isRequired,
-        name: PropTypes.string.isRequired,
-        isOnline: PropTypes.bool.isRequired,
-    })) 
 }

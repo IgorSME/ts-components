@@ -1,4 +1,4 @@
-import PropTypes from 'prop-types';
+import { IProfile } from '../../types/appTypes';
 import {
   ProfileItem,
   Description,
@@ -8,7 +8,7 @@ import {
   Quantity,
 } from './Profile.styled';
 
-export function Profile({ username, tag, location, avatar, stats }) {
+export const Profile:React.FC<IProfile> = ({ username, tag, location, avatar, stats })=> {
   return (
     <ProfileItem>
       <Description>
@@ -36,10 +36,4 @@ export function Profile({ username, tag, location, avatar, stats }) {
   );
 }
 
-Profile.propTypes = {
-  username: PropTypes.string.isRequired,
-  tag: PropTypes.string.isRequired,
-  location: PropTypes.string.isRequired,
-  avatar: PropTypes.string.isRequired,
-  stats: PropTypes.objectOf(PropTypes.number.isRequired),
-};
+
