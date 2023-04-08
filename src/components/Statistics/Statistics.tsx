@@ -16,7 +16,7 @@ export const Statistics:React.FC<IStatisticsProps> = ({ title, stats }) =>{
               percentage={stat.percentage}
             />
           ))
-          .reduce((acc, i) => findUniqueItems(acc, i), [])}
+          .reduce((acc:any[], i:any) => findUniqueItems(acc, i), [])}
       </StatList>
     </Container>
   );

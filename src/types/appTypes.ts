@@ -16,9 +16,11 @@ export interface IStat{
         percentage:number
     }[]
 }
+
+
 export interface IStatItem{
     label: string,
-        percentage:number
+    percentage:number
 }
 
 export interface IStatisticsProps extends IStat{
